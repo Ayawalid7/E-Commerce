@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Input } from "@heroui/react";
 import { Button } from "@heroui/react";
 import { useFormik } from 'formik';
-import * as Yup from 'yup';
+import * as yup from 'yup';;
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 
@@ -33,10 +33,10 @@ export default function Address() {
     setIsLoading(false);
   }
 
-  const validationSchema = Yup.object({
-    details: Yup.string().required("Details is required"),
-    city: Yup.string().required("City is required"),
-    phone: Yup.string()
+  const validationSchema = yup.object({
+    details: yup.string().required("Details is required"),
+    city: yup.string().required("City is required"),
+    phone: yup.string()
       .required("Phone is required")
       .matches(/^01[0125][0-9]{8}$/, "Invalid phone number")
   });

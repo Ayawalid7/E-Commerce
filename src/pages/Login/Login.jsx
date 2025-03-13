@@ -2,7 +2,7 @@ import React, { useState ,useContext } from 'react'
 import {Input} from "@heroui/react";
 import {Button} from "@heroui/react";
 import { useFormik } from 'formik';
-import * as Yup from 'yup'
+import * as yup from 'yup';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { authContext } from '../../contexts/authContext';
@@ -39,9 +39,9 @@ export default function Login() {
 
 
 }
- const validationSchema = Yup.object({
-  email: Yup.string().required("Email is required").email("Invaild email"),
-  password: Yup.string().required("password is required").min(8,"password must be at 8 characters"),
+ const validationSchema = yup.object({
+  email: yup.string().required("Email is required").email("Invaild email"),
+  password: yup.string().required("password is required").min(8,"password must be at 8 characters"),
 })
 
   const {values,handleChange,handleSubmit,errors,touched,handleBlur} = useFormik({

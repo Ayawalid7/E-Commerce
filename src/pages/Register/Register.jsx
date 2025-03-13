@@ -2,10 +2,9 @@ import React, { useState } from 'react'
 import {Input} from "@heroui/react";
 import {Button} from "@heroui/react";
 import { useFormik } from 'formik';
-import * as Yup from 'yup'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import * as yup from 'yup';
+import * as yup from 'yup';;
 
 
 export default function Register() {
@@ -36,12 +35,12 @@ export default function Register() {
 
 }
 
- const validationSchema = Yup.object({
-  name: Yup.string().required("Name is required").min(3,"Name must be at latest 3 charasterst").max(20,"Name must be at most 20 charasterst"),
-  email: Yup.string().required("Email is required").email("Invaild email"),
-  password: Yup.string().required("password is required").min(8,"password must be at 8 characters"),
-  rePassword: Yup.string().required("Ressword is required").oneOf([Yup.ref("password")]),
-  phone: Yup.string().required("Phone is required").matches(/^01[0125][0-9]{8}$/,"Invalid phone number")
+ const validationSchema = yup.object({
+  name: yup.string().required("Name is required").min(3,"Name must be at latest 3 charasterst").max(20,"Name must be at most 20 charasterst"),
+  email: yup.string().required("Email is required").email("Invaild email"),
+  password: yup.string().required("password is required").min(8,"password must be at 8 characters"),
+  rePassword: yup.string().required("Ressword is required").oneOf([yup.ref("password")]),
+  phone: yup.string().required("Phone is required").matches(/^01[0125][0-9]{8}$/,"Invalid phone number")
 
 })
 
