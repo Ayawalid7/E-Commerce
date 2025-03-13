@@ -41,7 +41,7 @@ export default function NavbarComponent() {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <p className="font-bold text-inherit">FreshCarts {counter}</p>
+          <p className="font-bold text-inherit">FreshCart {counter}</p>
         </NavbarBrand>
       </NavbarContent>
       {isLoggedIn && (
